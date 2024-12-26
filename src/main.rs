@@ -1,6 +1,6 @@
 use std::io;
 
-use rust_custom_db::db::DatabaseEngine;
+use custom_rust_db::db::DatabaseEngine;
 
 fn main() {
     let mut db = DatabaseEngine::new();
