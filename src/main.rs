@@ -10,11 +10,6 @@ fn main() {
         .read_line(&mut name)
         .expect("Failed to read line");
 
-    db.insert("name", &name);
-
-    if let Some(value) = db.get("name") {
-        println!("Value {}", value)
-    } else {
-        println!("Key not found")
-    }
+    let all_entries = db.get_all_entries();
+    println!("{:?}", all_entries);
 }
