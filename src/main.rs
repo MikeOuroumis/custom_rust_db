@@ -10,6 +10,11 @@ fn main() {
         .read_line(&mut name)
         .expect("Failed to read line");
 
-    let all_entries = db.get_all_entries();
-    println!("{:?}", all_entries);
+    db.insert("name", &name);
+
+    let entries = db.get_all_entries();
+    println!("All entries:");
+    for (key, value) in entries {
+        println!("{}: {}", key, value);
+    }
 }

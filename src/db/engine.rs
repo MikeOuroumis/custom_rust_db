@@ -1,13 +1,13 @@
-use std::collections::HashMap;
+use std::collections::BTreeMap;
 
 pub struct DatabaseEngine {
-    storage: HashMap<String, String>,
+    storage: BTreeMap<String, String>,
 }
 
 impl DatabaseEngine {
     pub fn new() -> Self {
         DatabaseEngine {
-            storage: HashMap::new(),
+            storage: BTreeMap::new(),
         }
     }
 
@@ -30,7 +30,7 @@ impl DatabaseEngine {
         }
     }
 
-    pub fn get_all_entries(&self) -> HashMap<String, String> {
+    pub fn get_all_entries(&self) -> BTreeMap<String, String> {
         self.storage.clone()
     }
 }
